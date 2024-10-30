@@ -1,0 +1,54 @@
+.dash{   
+
+    margin: auto;
+    width: 50%;
+    height: 250px;
+    background-color: rgb(214, 214, 228);
+margin-top:60px ;
+border-radius: 10px;
+box-shadow: 5px 5px 10px black ;
+
+}
+
+
+.head-dash{
+    text-align: center;
+    text-transform: capitalize;
+    color: rgb(71, 67, 59);
+
+
+}
+
+.dash-user{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+
+}
+
+.user-one{
+
+}
+
+.user-one h1{
+    color: rgb(8, 8, 8);
+    text-transform: capitalize;
+    font-size: 1rem;
+    margin: 20px;
+}
+
+.user-two h3{
+    color: rgb(8, 8, 8);
+    text-transform: capitalize;
+    font-size: 0.8rem;
+    margin: 20px;
+}
+
+
+.user-two h1{
+    color: rgb(8, 8, 8);
+    text-transform: capitalize;
+    font-size: 1rem;
+    margin: 20px;
+}
