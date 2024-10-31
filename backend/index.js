@@ -6,15 +6,13 @@ require('dotenv').config();
 const startServer = require('./Cluster/clust')
 const rateLimit = require('express-rate-limit');
 const session = require("express-session");
-const  userdb=require('./models/user')
-const passport = require("passport");
-const OAuth2Strategy = require("passport-google-oauth2").Strategy;
+
 const router = require('./routes/router');
 
+const passport =require('./google/login')
 
 
-const clientid=process.env.Clientids
-const clientsecret=process.env.ClientSecrets
+
 
 // express convert to app()
 const app=express()
@@ -59,57 +57,7 @@ app.use(passport.session());
 
 
 
-
-passport.use(
-    new OAuth2Strategy({
-        clientID:clientid,
-        clientSecret:clientsecret,
-        callbackURL:"/auth/google/callback",
-        scope:["profile","email"]
-    },
-    async(accessToken,refreshToken,profile,done)=>{
-  
-      console.log('profile'  , profile)
-  
-        try {
-            let user = await userdb.findOne({googleId:profile.id}); //check user in data base 
-  
-  
-            if(!user){
-                user = new userdb({
-                    googleId:profile.id,
-                    displayName:profile.displayName,
-                    email:profile.emails[0].value,
-                    image:profile.photos[0].value
-                });
-  
-                await user.save();
-            }
-  
-            return done(null,user)
-        } catch (error) {
-            return done(error,null)
-        }
-    }
-    )
-  )
-  
-  passport.serializeUser((user,done)=>{
-    done(null,user);
-  })
-  
-  passport.deserializeUser((user,done)=>{
-    done(null,user);
-  });
-
-
-passport.serializeUser((user,done)=>{
-  done(null,user);
-})
-
-passport.deserializeUser((user,done)=>{
-  done(null,user);
-});
+ 
 
 
 
