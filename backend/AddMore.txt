@@ -86,6 +86,7 @@ Npm package :::::::::::: <><><><><><><>------------------->>
 
 ..::app.use(require('express-status-monitor')())
 
+..:: Admin user get
 
 ::::::::::::  Rest Api  :::::::::::::::::::::
 

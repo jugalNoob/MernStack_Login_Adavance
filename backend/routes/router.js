@@ -8,4 +8,5 @@ router.post("/signup",controllers.login )
 router.get('/Count', authenticate, controllers.auth);
 router.patch("/update",controllers.update )
 router.get("/logout",controllers.logout)
+router.get("/Admin" , controllers.admin)
 module.exports = router;

@@ -113,6 +113,8 @@ function Nav() {
 
 <NavLink to="/google">googleDash</NavLink>
 
+<NavLink to="/admin">admin</NavLink>
+
                 <button onClick={handleLogout}>logout</button>
                 </center>
               </>

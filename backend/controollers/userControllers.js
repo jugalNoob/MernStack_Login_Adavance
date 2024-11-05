@@ -265,6 +265,30 @@ exports.logout = async (req, res) => {
   }
 
 
+  /// Admin DashBoard create buttoon 
+
+
+  
+  exports.admin = async (req, res) => { 
+
+try {
+  const getuser=await  Register.find({})
+
+  console.log(getuser)
+
+  res.status(200).json({getuser})
+
+} catch (error) {
+  
+  console.error("Error fetching users:", error);
+
+  res.status(400).json({error: error})
+}
+ 
+
+  }
+
+
 
 
   ///second update logic class row class

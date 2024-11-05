@@ -1,6 +1,7 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
+import Admin from './page/Admin';
 import Dash from './page/Dash';
 import Dashg from './page/Dashg';
 import Forget from './page/Forget';
@@ -45,7 +46,12 @@ const router = createBrowserRouter([
         path: "/google", 
         element: <Dashg/>
 
-      }
+      },
+      {
+        path: "/admin", 
+        element: <Admin/>
+
+      },
     ]
   }
 ]);
